@@ -1,0 +1,143 @@
+/* Base styling for the app container */
+body {
+  font-family: 'Roboto', sans-serif;
+  background: radial-gradient(circle, #6dd5ed, #2193b0);
+  margin: 0;
+  padding: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
+.app-container {
+  width: 90%; /* Adjust to use a percentage for responsiveness */
+  max-width: 400px; /* Maximum width */
+  background-color: white;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  padding: 20px;
+  overflow: hidden; /* Prevent overflow */
+}
+
+/* Form styles */
+form {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  margin-bottom: 20px;
+}
+
+input[type="text"] {
+  padding: 12px; /* Increased padding */
+  border: 1px solid #dfe1e6;
+  border-radius: 4px;
+  font-size: 16px;
+  transition: box-shadow 0.2s ease-in-out;
+}
+
+input[type="text"]:focus {
+  outline: none;
+  box-shadow: 0 0 5px rgba(81, 203, 238, 1);
+}
+
+/* Todo item styles */
+.todo-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #fff;
+  padding: 12px 15px; /* Increased padding */
+  border-radius: 4px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  margin-bottom: 12px; /* Increased margin */
+  transition: transform 0.2s, background-color 0.3s;
+  animation: fadeIn 0.3s ease-out; /* Animation on render */
+}
+
+.todo-item:hover {
+  background-color: #f1f1f1;
+  transform: translateY(-3px);
+}
+
+.todo-item.complete {
+  text-decoration: line-through;
+  color: #7a7a7a;
+}
+
+.todo-item span {
+  flex-grow: 1;
+  margin-right: 10px;
+}
+
+/* Button styles */
+button {
+  background-color: #0079bf;
+  color: white;
+  border: none;
+  padding: 8px 12px; /* Increased padding */
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background-color 0.2s, transform 0.1s;
+  flex-shrink: 0; /* Prevent buttons from shrinking */
+}
+
+button:hover {
+  background-color: #005a8e;
+}
+
+button:active {
+  transform: scale(0.98);
+}
+
+button.delete {
+  background-color: #eb5a46;
+}
+
+button.delete:hover {
+  background-color: #c83e2b;
+}
+
+button.delete:active {
+  transform: scale(0.98);
+}
+
+/* Animation */
+@keyframes fadeIn {
+  from {
+      opacity: 0;
+      transform: scale(0.9);
+  }
+  to {
+      opacity: 1;
+      transform: scale(1);
+  }
+}
+
+span{
+  background-color: white;
+  padding: 5px;
+  border-radius: 2px;
+}
+
+/* Responsive Design */
+@media (max-width: 480px) {
+  .app-container {
+      width: 95%; /* Full width on smaller screens */
+      padding: 15px; /* Less padding */
+  }
+
+  input[type="text"] {
+      padding: 10px; /* Reduced padding */
+  }
+
+  button {
+      padding: 6px 10px; /* Reduced button padding */
+      margin: 3px;
+  }
+
+  .todo-item {
+    margin: 10px;
+      padding: 10px; /* Reduced padding for todo items */
+  }
+}
